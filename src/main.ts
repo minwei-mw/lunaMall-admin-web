@@ -1,5 +1,13 @@
 import { createApp } from "vue";
-import "./style.css";
-import App from "./App.vue";
+import store from "./store";
+import router from './router';
+import App from "./App.vue"
+import 'ant-design-vue/dist/antd.css';
 
-createApp(App).mount("#app");
+
+const app = createApp(App);
+// 挂载store
+app.use(store);
+app.use(router);
+// 挂载实例
+app.mount("#app");
